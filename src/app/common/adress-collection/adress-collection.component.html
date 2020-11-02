@@ -1,0 +1,14 @@
+<ul class="collection">
+    <li class="collection-item" *ngIf="dataS.PERSON_LIST.length === 0">
+        Theres no addresses, would you like to add <a routerLink="/add">one</a>?
+    </li>
+    <li class="collection-item" *ngFor="let persons of dataS.PERSON_LIST">
+        <span class="title"></span>
+        <p>{{persons.name + ' ' + persons.lastName}}<br>
+            {{persons.phoneNumber}}
+        </p>
+        <button [routerLink]="'/edit/'+persons.id" class="btn">
+            <i class="material-icons">edit</i>
+        </button>
+    </li>
+</ul>

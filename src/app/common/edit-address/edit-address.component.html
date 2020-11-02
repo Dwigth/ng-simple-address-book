@@ -1,0 +1,41 @@
+<div style="margin-top: 5rem;">
+    <a routerLink="/main" class="btn waves-effect waves-light" type="button">
+        <i class="material-icons left">arrow_back</i>
+    </a>
+</div>
+<div class="row collection">
+    <form [formGroup]="EditForm" (ngSubmit)="Edit()" class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <input formControlName="name" placeholder="" id="first_name" type="text" class="validate">
+                <label for="first_name">Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input formControlName="lastName" id="last_name" type="text" class="validate">
+                <label for="last_name">Last Name </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="phoneNumber" id="phone" type="text" class="validate">
+                <label for="phone">Phone Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input formControlName="address" id="address" type="text" class="validate">
+                <label for="address">Address</label>
+            </div>
+        </div>
+        <input formControlName="id" id="id" type="hidden" class="validate">
+        <button [disabled]="!EditForm.valid" style="margin-bottom: 2rem;" class="btn waves-effect waves-light"
+            type="submit" name="action">Edit
+            <i class="material-icons right">send</i>
+        </button>
+        <br>
+        <button (click)="Delete()" style="margin-bottom: 2rem;" class="btn waves-effect waves-light red darken-1" type="button"
+            name="action"> Delete
+            <i class="material-icons right">delete</i>
+        </button>
+    </form>
+</div>

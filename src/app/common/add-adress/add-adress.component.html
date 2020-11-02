@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="input-field">
+        <input #searchInput (keyup)="Search(searchInput.value)" id="search" type="text" class="validate">
+        <label class="active" for="search">Search...</label>
+    </div>
+</div>
+
+<div class="fixed-action-btn">
+    <a routerLink="/add" class="btn-floating btn-large red">
+        <i class="large material-icons">add</i>
+    </a>
+</div>
